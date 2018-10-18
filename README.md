@@ -71,3 +71,39 @@ npm install -–save chart.js@2.5.0 @types/chart.js @types/chart.js font-awesome
 ```
 ng serve --o 
 ```
+
+# Implementing Todo Application
+**Generate Todo class using CLI**
+
+```
+// --spec creates a test file which is not needed as CLI does it by default
+ng generate class todo-list/Todo --spec
+
+// creates folder todo-list with two files
+src/app/todo-list/todo.spec.ts
+src/app/todo-list/todo.ts
+```
+
+Replace the code inside ```todo.ts``` with 
+```
+export class Todo {
+    id: number;
+    title = '';
+    complete = false;
+    category: number;
+
+    constructor(values: Object = {}) {
+      Object.assign(this, values);
+    }
+}
+```
+
+**Generate TodoDataService:**
+
+```
+ng generate service todo-list/TodoData
+
+// output
+create src/app/todos/todo-data.service.spec.ts (387 bytes)
+create src/app/todos/todo-data.service.ts (114 bytes)
+```
